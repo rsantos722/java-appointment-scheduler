@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="586.0" prefWidth="1159.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="C195RafaelSantos.View.AppointmentsController">
+   <children>
+      <TableView fx:id="appointmentsTable" layoutX="11.0" layoutY="81.0" onSort="#appointmentsTableSortAction" prefHeight="455.0" prefWidth="1141.0">
+        <columns>
+          <TableColumn fx:id="appointmentIdColumn" editable="false" prefWidth="75.0" text="Appointment_ID" />
+          <TableColumn fx:id="appointmentTitleColumn" editable="false" onEditCancel="#appointmentTitleColumnCancelAction" onEditCommit="#appointmentTitleColumnCommitAction" prefWidth="75.0" text="Title" />
+            <TableColumn fx:id="descriptionColumn" editable="false" onEditCancel="#descriptionColumnCancelAction" onEditCommit="#descriptionColumnCommitAction" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="locationColumn" editable="false" onEditCancel="#locationColumnCancelAction" onEditCommit="#locationColumnCommitAction" prefWidth="75.0" text="Location" />
+            <TableColumn fx:id="contactColumn" editable="false" onEditCancel="#contactColumnCancelAction" onEditCommit="#contactColumnCommitAction" prefWidth="75.0" text="Contact" />
+            <TableColumn fx:id="typeColumn" editable="false" onEditCancel="#typeColumnCancelAction" onEditCommit="#typeColumnCommitAction" prefWidth="57.0" text="Type" />
+            <TableColumn fx:id="dateColumn" editable="false" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="startTimeColumn" editable="false" onEditCancel="#startTimeCommitCancelAction" onEditCommit="#startTimeColumnCommitAction" prefWidth="75.0" text="Start Time" />
+            <TableColumn fx:id="endTimeColumn" editable="false" onEditCancel="#endTimeColumnCancelAction" onEditCommit="#endTimeColumnCommitAction" prefWidth="75.0" text="End Time" />
+            <TableColumn fx:id="customerIDColumn" editable="false" prefWidth="75.0" text="Customer_ID" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Text layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments" wrappingWidth="242.068359375">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <RadioButton fx:id="appointmentsThisWeekRadioButton" layoutX="978.0" layoutY="36.0" mnemonicParsing="false" onAction="#appointmentsThisWeekRadioButtonAction" selected="true" text="Appointments this week">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="appointmentTimeFrameToggleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="appointmentsThisMonth" layoutX="978.0" layoutY="60.0" mnemonicParsing="false" onAction="#appointmentsThisMonthRadioButton" text="Appointments this month" toggleGroup="$appointmentTimeFrameToggleGroup">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="updateAppointmentButton" layoutX="213.0" layoutY="544.0" mnemonicParsing="false" onAction="#updateAppointmentButtonAction" prefHeight="35.0" prefWidth="193.0" text="Update Appointment">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="addNewAppointmentButton" layoutX="11.0" layoutY="544.0" mnemonicParsing="false" onAction="#addNewAppointmentButtonAction" prefHeight="35.0" prefWidth="193.0" text="Add New Appointment">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="deleteAppointmentButton" layoutX="416.0" layoutY="544.0" mnemonicParsing="false" onAction="#deleteAppointmentButtonAction" prefHeight="35.0" prefWidth="193.0" text="Delete Appointment">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="exitButton" layoutX="952.0" layoutY="544.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="35.0" prefWidth="193.0" text="Exit" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
